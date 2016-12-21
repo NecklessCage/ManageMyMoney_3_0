@@ -56,7 +56,7 @@ public class IncomeInput extends BackStackFragment {
     } // End of onCreateView.
 
     private void SetDefaultDate(View rootView) {
-        selectedIncomeDate = Helpers.SetMidnight(Calendar.getInstance());
+        selectedIncomeDate = Helpers.setMidnight(Calendar.getInstance());
         ((ImageTextButton) rootView.findViewById(R.id.image_text_income_calendar))
                 .setText(Helpers.dateFormat.format(selectedIncomeDate));
     } // End of SetDefaultDate.
@@ -109,7 +109,7 @@ public class IncomeInput extends BackStackFragment {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 activity.calendar.set(year, monthOfYear, dayOfMonth);
-                selectedIncomeDate = Helpers.SetMidnight(activity.calendar);
+                selectedIncomeDate = Helpers.setMidnight(activity.calendar);
                 imageTextIncomeCalendar.setText(Helpers.dateFormat.format(selectedIncomeDate));
                 // Reload data.
                 LoadIncomes(rootView);

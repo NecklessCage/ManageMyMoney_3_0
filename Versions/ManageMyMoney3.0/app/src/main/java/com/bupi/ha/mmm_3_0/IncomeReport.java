@@ -61,7 +61,7 @@ public class IncomeReport extends BackStackFragment {
                 rootView.findViewById(R.id.spinner_income_report_division);
         divisionSpinner.setAdapter(Helpers.LoadIncomeDivisions(activity, false));
 
-        long today = Helpers.SetMidnight(activity.calendar);
+        long today = Helpers.setMidnight(activity.calendar);
         selectedDateFrom = today;
         selectedDateTo = today;
         ((ImageTextButton) rootView.findViewById(R.id.image_text_income_report_date_from))
@@ -127,7 +127,7 @@ public class IncomeReport extends BackStackFragment {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 activity.calendar.set(year, monthOfYear, dayOfMonth);
-                selectedDateFrom = Helpers.SetMidnight(activity.calendar);
+                selectedDateFrom = Helpers.setMidnight(activity.calendar);
                 imageTextDateFrom.setText(Helpers.dateFormat.format(selectedDateFrom));
                 LoadIncomes(rootView);
             } // End of onDateSet.
@@ -150,7 +150,7 @@ public class IncomeReport extends BackStackFragment {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 activity.calendar.set(year, monthOfYear, dayOfMonth);
-                selectedDateTo = Helpers.SetMidnight(activity.calendar);
+                selectedDateTo = Helpers.setMidnight(activity.calendar);
                 imageTextDateTo.setText(Helpers.dateFormat.format(selectedDateTo));
                 LoadIncomes(rootView);
             } // End of onDateSet.

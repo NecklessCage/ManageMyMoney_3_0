@@ -6,6 +6,7 @@
     android:gravity="center_vertical|left"
     android:orientation="horizontal">
 
+    <!-- Following TextView is invisible. Do not change anything. -->
     <TextView
         android:id="@+id/text_view_list_item_id"
         android:layout_width="wrap_content"
@@ -17,7 +18,7 @@
 
     <TextView
         android:id="@+id/text_view_list_item_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:minHeight="@dimen/view_min_height_spinner_item"

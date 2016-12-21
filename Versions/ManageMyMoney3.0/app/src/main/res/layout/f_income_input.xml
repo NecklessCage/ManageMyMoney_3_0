@@ -17,28 +17,25 @@
             custom:textColor="@color/text_primary" />
     </TableRow>
 
-    <TableRow>
+    <TableRow style="@style/AppTheme.TableRow">
 
-        <LinearLayout
+        <!--........................................................................... Division Spinner -->
+        <Spinner
+            android:id="@+id/spinner_income_input_income_division"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </TableRow>
 
-            <!--........................................................................... Division Spinner -->
-            <Spinner
-                android:id="@+id/spinner_income_input_income_division"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <!--........................................................................... Category Spinner -->
-            <Spinner
-                android:id="@+id/spinner_income_input_income_category"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+    <TableRow style="@style/AppTheme.TableRow">
+        <!--........................................................................... Category Spinner -->
+        <Spinner
+            android:id="@+id/spinner_income_input_income_category"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
     </TableRow>
 
     <TableRow>

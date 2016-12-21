@@ -104,7 +104,7 @@
                 android:text="@string/text_delete_selected" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_marginBottom="5dp">
 
             <ListView
                 android:id="@+id/list_view_expense_report"

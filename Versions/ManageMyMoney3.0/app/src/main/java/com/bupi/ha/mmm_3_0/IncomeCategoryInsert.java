@@ -68,7 +68,6 @@ public class IncomeCategoryInsert extends BackStackFragment {
                 LoadIncomeCategoryOptions(rootView);
             } // End of onItemSelected.
 
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // Do nothing.
@@ -88,22 +87,26 @@ public class IncomeCategoryInsert extends BackStackFragment {
                 EditText editTextIncomeCategory = (EditText) rootView.findViewById(
                         R.id.edit_text_new_income_category);
                 String incomeCategory = editTextIncomeCategory.getText().toString();
-                // Create content values object.
-                ContentValues values = new ContentValues();
-                values.put(IncomeCategory.Columns.INCOME_CATEGORY, incomeCategory);
-                values.put(IncomeCategory.Columns.INCOME_DIVISION, String.valueOf(incomeDivisionId));
-                // Do insertion.
-                getActivity().getContentResolver().insert(
-                        Provider.ContentUri.INCOME_CATEGORY, values);
-                // Clear fields.
-                editTextIncomeCategory.setText("");
-                // Prompt user of the action.
-                Toast.makeText(activity.getApplicationContext(),
-                        getString(R.string.prompt_category_insert_complete),
-                        Toast.LENGTH_SHORT)
-                        .show();
+                if (incomeCategory.isEmpty()) {
+                    Toast.makeText(activity, R.string.prompt_invalid, Toast.LENGTH_SHORT).show();
+                } else {
+                    // Create content values object.
+                    ContentValues values = new ContentValues();
+                    values.put(IncomeCategory.Columns.INCOME_CATEGORY, incomeCategory);
+                    values.put(IncomeCategory.Columns.INCOME_DIVISION, String.valueOf(incomeDivisionId));
+                    // Do insertion.
+                    getActivity().getContentResolver().insert(
+                            Provider.ContentUri.INCOME_CATEGORY, values);
+                    // Clear fields.
+                    editTextIncomeCategory.setText("");
+                    // Prompt user of the action.
+                    Toast.makeText(activity.getApplicationContext(),
+                            getString(R.string.prompt_category_insert_complete),
+                            Toast.LENGTH_SHORT)
+                            .show();
 
-                LoadIncomeCategoryOptions(rootView);
+                    LoadIncomeCategoryOptions(rootView);
+                } // if
             } // End of onClick.
         }); // End of setOnClickListener.
     } // End of AddListeners.

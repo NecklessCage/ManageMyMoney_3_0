@@ -56,26 +56,30 @@ public class IncomeDivisionInsert extends BackStackFragment {
                 EditText editTextNewIncomeDivision = (EditText) rootView.findViewById(
                         R.id.edit_text_new_income_division);
                 String incomeDivision = editTextNewIncomeDivision.getText().toString();
-                // Set up content values for insertion.
-                ContentValues values = new ContentValues();
-                values.put(IncomeDivision.Columns.INCOME_DIVISION, incomeDivision);
-                // Insert.
-                Uri uri = getActivity().getContentResolver().insert(
-                        Provider.ContentUri.INCOME_DIVISION, values);
-                //Log.i("HOLA!", uri.toString());
-                // Clear field.
-                editTextNewIncomeDivision.setText("");
+                if (incomeDivision.isEmpty()) {
+                    Toast.makeText(activity, R.string.prompt_invalid, Toast.LENGTH_SHORT).show();
+                } else {
+                    // Set up content values for insertion.
+                    ContentValues values = new ContentValues();
+                    values.put(IncomeDivision.Columns.INCOME_DIVISION, incomeDivision);
+                    // Insert.
+                    Uri uri = getActivity().getContentResolver().insert(
+                            Provider.ContentUri.INCOME_DIVISION, values);
+                    //Log.i("HOLA!", uri.toString());
+                    // Clear field.
+                    editTextNewIncomeDivision.setText("");
 
-                // Bind data to list view.
-                ((ListView) rootView.findViewById(R.id.list_view_income_divisions)).setAdapter(
-                        Helpers.LoadIncomeDivisions((ActivityMain) getActivity(), true)
-                );
+                    // Bind data to list view.
+                    ((ListView) rootView.findViewById(R.id.list_view_income_divisions)).setAdapter(
+                            Helpers.LoadIncomeDivisions((ActivityMain) getActivity(), true)
+                    );
 
-                Toast.makeText(
-                        activity.getApplicationContext(),
-                        getString(R.string.prompt_division_insert_complete),
-                        Toast.LENGTH_SHORT)
-                        .show();
+                    Toast.makeText(
+                            activity.getApplicationContext(),
+                            getString(R.string.prompt_division_insert_complete),
+                            Toast.LENGTH_SHORT)
+                            .show();
+                } // if
             } // End of onClick.
         }); // End of setOnClickListener.
     } // End of AddListeners

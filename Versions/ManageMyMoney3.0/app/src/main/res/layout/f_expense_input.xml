@@ -15,25 +15,27 @@
             custom:backgroundColor="@android:color/transparent"
             custom:drawable="@android:drawable/ic_menu_my_calendar"
             custom:separation="3dp"
-            custom:textColor="@color/text_primary"
-            custom:text="TODAY" />
+            custom:text="TODAY"
+            custom:textColor="@color/text_primary" />
     </TableRow>
 
-    <TableRow>
+    <TableRow style="@style/AppTheme.TableRow">
         <!--........................................................................... Division Spinner -->
         <Spinner
             android:id="@+id/spinner_expense_input_expense_division"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1" />
     </TableRow>
 
-    <TableRow>
+    <TableRow style="@style/AppTheme.TableRow">
         <!--........................................................................... Category Spinner -->
         <Spinner
             android:id="@+id/spinner_expense_input_expense_category"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1" />
     </TableRow>
 

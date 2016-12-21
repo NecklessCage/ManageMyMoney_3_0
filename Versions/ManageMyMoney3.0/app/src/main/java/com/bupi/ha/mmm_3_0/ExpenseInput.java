@@ -59,7 +59,7 @@ public class ExpenseInput extends BackStackFragment {
     } // End of onCreateView.
 
     private void SetDefaultDate(View rootView) {
-        _selectedDate = Helpers.SetMidnight(_calendar);
+        _selectedDate = Helpers.setMidnight(_calendar);
         ((ImageTextButton) rootView.findViewById(
                 R.id.image_text_calendar)).setText(Helpers.dateFormat.format(_selectedDate));
     } // End of SetDefaultDate.
@@ -109,7 +109,7 @@ public class ExpenseInput extends BackStackFragment {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 _calendar.set(year, monthOfYear, dayOfMonth);
-                _selectedDate = Helpers.SetMidnight(_calendar);
+                _selectedDate = Helpers.setMidnight(_calendar);
                 imageTextCalendar.setText(Helpers.dateFormat.format(_selectedDate));
                 LoadExpenses(rootView);
             } // End of onDateSet.
@@ -196,7 +196,7 @@ public class ExpenseInput extends BackStackFragment {
                     long divisionId = spinnerExpenseDivision.getSelectedItemId();
                     long categoryId = spinnerExpenseCategory.getSelectedItemId();
                     int amount = Integer.parseInt(editTextAmount.getText().toString());
-                    _selectedDate = Helpers.SetMidnight(_calendar);
+                    _selectedDate = Helpers.setMidnight(_calendar);
 
                     Log.i("ExpenseInput Date: ", String.valueOf(_selectedDate));
 

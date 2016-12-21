@@ -62,7 +62,7 @@ public class ExpenseReport extends BackStackFragment {
                 rootView.findViewById(R.id.spinner_expense_report_division);
         divisionSpinner.setAdapter(Helpers.LoadExpenseDivisions(activity, false));
 
-        long today = Helpers.SetMidnight(activity.calendar);
+        long today = Helpers.setMidnight(activity.calendar);
         selectedDateFrom = today;
         selectedDateTo = today;
         ((ImageTextButton) rootView.findViewById(R.id.image_text_expense_report_date_from))
@@ -128,7 +128,7 @@ public class ExpenseReport extends BackStackFragment {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 activity.calendar.set(year, monthOfYear, dayOfMonth);
-                selectedDateFrom = Helpers.SetMidnight(activity.calendar);
+                selectedDateFrom = Helpers.setMidnight(activity.calendar);
                 imageTextDateFrom.setText(Helpers.dateFormat.format(selectedDateFrom));
                 LoadExpenses(rootView);
             } // End of onDateSet.
@@ -152,7 +152,7 @@ public class ExpenseReport extends BackStackFragment {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 activity.calendar.set(year, monthOfYear, dayOfMonth);
-                selectedDateTo = Helpers.SetMidnight(activity.calendar);
+                selectedDateTo = Helpers.setMidnight(activity.calendar);
                 imageTextDateTo.setText(Helpers.dateFormat.format(selectedDateTo));
                 LoadExpenses(rootView);
             } // End of onDateSet.

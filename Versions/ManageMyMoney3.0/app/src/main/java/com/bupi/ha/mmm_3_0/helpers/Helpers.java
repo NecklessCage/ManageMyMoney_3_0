@@ -14,6 +14,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
@@ -314,14 +315,19 @@ public class Helpers {
     } // End of LoadIncomeReportCheckable.
 
     //----------------------------------------------------------------------------------------Others
-    public static long SetMidnight(Calendar calendar) {
+    public static long setMidnight(Calendar calendar) {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
 
         return calendar.getTimeInMillis();
-    } // End of SetMidnight.
+    } // End of setMidnight.
+
+    public static int numberOfDaysInMonth(int year, int month) {
+        Calendar monthStart = new GregorianCalendar(year, month, 1);
+        return monthStart.getActualMaximum(Calendar.DAY_OF_MONTH);
+    } // numberOfDaysInMonth
 
     public static String WhereChain(
             String tableName, String colName, ArrayList<Object> values, String AndOr) {
