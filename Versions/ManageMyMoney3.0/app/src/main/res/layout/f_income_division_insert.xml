@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_view_new_income_division_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/title_create_new_income_division" />
+
+    <EditText
+        android:id="@+id/edit_text_new_income_division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/text_view_new_income_division_title"
+        android:hint="@string/hint_new_division_name"
+        android:minWidth="20dp" />
+
+    <Button
+        android:id="@+id/button_income_division_insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/text_view_new_income_division_title"
+        android:layout_toRightOf="@+id/edit_text_new_income_division"
+        android:text="@string/text_insert" />
+
+    <ListView
+        android:id="@+id/list_view_income_divisions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edit_text_new_income_division" />
+</RelativeLayout>

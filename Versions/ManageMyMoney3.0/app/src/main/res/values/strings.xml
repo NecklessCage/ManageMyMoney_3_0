@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">MMM 3.0</string>
+
+    <string name="welcome_msg">Manage My Money 3.0</string>
+    <string name="loading_msg">Loading ...</string>
+
+    <!--................................................................................ Strings -->
+    <string name="app_title_expense_input">MMM 2.0: Expense Input</string>
+    <string name="app_title_income_input">MMM 2.0: Income Input</string>
+    <string name="app_title_reports">MMM 2.0: Reports</string>
+    <string name="app_title_expense_report">MMM 2.0: Review: Expenses</string>
+    <string name="app_title_income_report">MMM 2.0: Review: Incomes</string>
+    <string name="app_title_expense_category_insert">MMM 2.0: Expense Category Insert</string>
+    <string name="app_title_expense_division_insert">MMM 2.0: Expense Division Insert</string>
+    <string name="app_title_income_category_insert">MMM 2.0: Income Category Insert</string>
+    <string name="app_title_income_division_insert">MMM 2.0: Income Division Insert</string>
+
+    <string name="start_page_title">Weekly Snapshot</string>
+
+
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <string name="hint_note">Description</string>
+    <string name="hint_amount">$$$</string>
+    <string name="text_add_expense">Add Expense</string>
+    <string name="text_use_all_filters">Use all filters</string>
+    <string name="text_delete_selected">Delete Selected</string>
+    <string name="text_add_income">Add Income</string>
+    <string name="text_select_division">Select a division</string>
+
+    <string name="title_create_new_expense_division">Create New Expense Division</string>
+    <string name="title_create_new_expense_category">Create New Expense Category</string>
+    <string name="title_create_new_income_division">Create New Income Division</string>
+    <string name="title_create_new_income_category">Create New Income Category</string>
+
+    <string name="text_insert">Insert</string>
+    <string name="hint_new_division_name">Enter a new division</string>
+
+    <string name="hint_new_category_name">Enter a new category</string>
+
+    <string name="text_review_expenses">Review Expenses</string>
+    <string name="text_review_incomes">Review Incomes</string>
+    <string name="text_bar_chart">Bar Chart</string>
+
+    <string name="text_search_by">Search by</string>
+    <string name="text_start_date">Start Date:</string>
+    <string name="text_end_date">End Date:</string>
+    <string name="text_division">Division:</string>
+    <string name="text_category">Category:</string>
+
+    <string name="prompt_no_items_selected">Please select item(s) first.</string>
+    <string name="prompt_confirmation">Confirmation</string>
+    <string name="prompt_confirmation_message">Do you want to permanently delete the selected records?</string>
+    <string name="prompt_record_deleted">Records deleted.</string>
+
+    <string name="prompt_invalid">Please enter valid input(s).</string>
+    <string name="prompt_category_insert_complete">New category inserted.</string>
+    <string name="prompt_division_insert_complete">New division inserted.</string>
+    <string name="prompt_new_record_insert_complete">"New record inserted."</string>
+    <string name="prompt_no_division">Add a new division first.</string>
+</resources>

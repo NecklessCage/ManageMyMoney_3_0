@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_new_income_category_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/title_create_new_income_category" />
+
+    <Spinner
+        android:id="@+id/spinner_income_division_category_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_new_income_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_new_category_name" />
+
+    <Button
+        android:id="@+id/button_income_category_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_insert" />
+
+    <ListView
+        android:id="@+id/list_view_income_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow>
+        <!--................................................................................... Calendar -->
+        <com.bupi.ha.mmm_3_0.ImageTextButton
+            android:id="@+id/image_text_income_calendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:drawable="@android:drawable/ic_menu_my_calendar"
+            custom:separation="3dp"
+            custom:text="TODAY"
+            custom:textColor="@color/text_primary" />
+    </TableRow>
+
+    <TableRow>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <!--........................................................................... Division Spinner -->
+            <Spinner
+                android:id="@+id/spinner_income_input_income_division"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!--........................................................................... Category Spinner -->
+            <Spinner
+                android:id="@+id/spinner_income_input_income_category"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/edit_text_income_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_amount"
+            android:inputType="number" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/button_insert_income"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_add_income" />
+    </TableRow>
+
+    <TableRow>
+
+        <ListView
+            android:id="@+id/list_view_income_input"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" />
+    </TableRow>
+</TableLayout>

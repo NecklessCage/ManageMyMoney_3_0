@@ -1,0 +1,45 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/bg</item>
+
+        <item name="android:spinnerStyle">@style/AppTheme.Spinner</item>
+        <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItem</item>
+
+        <item name="android:buttonStyle">@style/AppTheme.Button</item>
+
+        <item name="android:editTextStyle">@style/AppTheme.EditText</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
+    <style name="AppTheme.Spinner" parent="Widget.AppCompat.Spinner"></style>
+
+    <style name="AppTheme.SpinnerItem" parent="Widget.AppCompat.TextView.SpinnerItem"></style>
+
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="AppTheme.EditText" parent="Widget.AppCompat.EditText">
+        <item name="textColor">@color/text_primary</item>
+    </style>
+
+    <!--....................................................................Separators & Dividers-->
+    <style name="horizontal_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="vertical_divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#999999</item>
+    </style>
+
+</resources>

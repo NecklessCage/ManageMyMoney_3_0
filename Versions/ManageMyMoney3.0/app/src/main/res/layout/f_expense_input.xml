@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow>
+        <!--................................................................................... Calendar -->
+        <com.bupi.ha.mmm_3_0.ImageTextButton
+            android:id="@+id/image_text_calendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            custom:backgroundColor="@android:color/transparent"
+            custom:drawable="@android:drawable/ic_menu_my_calendar"
+            custom:separation="3dp"
+            custom:textColor="@color/text_primary"
+            custom:text="TODAY" />
+    </TableRow>
+
+    <TableRow>
+        <!--........................................................................... Division Spinner -->
+        <Spinner
+            android:id="@+id/spinner_expense_input_expense_division"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow>
+        <!--........................................................................... Category Spinner -->
+        <Spinner
+            android:id="@+id/spinner_expense_input_expense_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/edit_text_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_note"
+            android:inputType="text" />
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/edit_text_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_amount"
+            android:inputType="number"
+            android:onClick="onClickEditText" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/button_insert_expense"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/text_add_expense" />
+    </TableRow>
+
+    <!--
+        <TableRow style="@style/table_row">
+
+            <CheckBox
+                android:id="@+id/check_box_use_all_filters"
+                style="@style/view_with_text.checkbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Use all filters" />
+        </TableRow>
+        -->
+
+    <TableRow>
+
+        <ListView
+            android:id="@+id/list_view_expense_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            tools:clickable="false" />
+    </TableRow>
+
+</TableLayout>

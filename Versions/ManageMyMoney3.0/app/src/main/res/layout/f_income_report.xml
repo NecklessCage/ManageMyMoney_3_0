@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/table_layout_income_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_search_by" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/check_box_income_report_start_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_start_date" />
+
+            <com.bupi.ha.mmm_3_0.ImageTextButton
+                android:id="@+id/image_text_income_report_date_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                custom:drawable="@android:drawable/ic_menu_my_calendar"
+                custom:separation="3dp"
+                custom:textColor="@color/text_primary" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/check_box_income_report_end_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_end_date" />
+
+            <com.bupi.ha.mmm_3_0.ImageTextButton
+                android:id="@+id/image_text_income_report_date_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                custom:drawable="@android:drawable/ic_menu_my_calendar"
+                custom:separation="3dp"
+                custom:textColor="@color/text_primary" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/check_box_income_report_division"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_division" />
+
+            <Spinner
+                android:id="@+id/spinner_income_report_division"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/check_box_income_report_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_category" />
+
+            <Spinner
+                android:id="@+id/spinner_income_report_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button_delete_selected_incomes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_delete_selected" />
+        </TableRow>
+
+        <TableRow>
+
+            <ListView
+                android:id="@+id/list_view_income_report"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

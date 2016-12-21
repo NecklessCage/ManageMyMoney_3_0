@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="app_title_text_size">12sp</dimen>
+
+    <dimen name="app_margin">5dp</dimen>
+
+    <!--<dimen name="text_size">20sp</dimen>-->
+    <dimen name="image_text_size">10sp</dimen>
+
+    <dimen name="view_min_height">20dp</dimen>
+    <dimen name="view_min_height_spinner_item">40dp</dimen>
+
+    <!-- Animation constants -->
+    <dimen name="animator_sliding_width_plus">200dp</dimen>
+    <dimen name="animator_sliding_width_minus">-200dp</dimen>
+
+    <dimen name="app_padding">10dp</dimen>
+    <dimen name="layout_margin">3dp</dimen>
+    <dimen name="edit_padding">15dp</dimen>
+
+    <dimen name="fab_margin">3dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="fab_size">50dp</dimen>
+    <dimen name="offset_1">60dp</dimen>
+    <dimen name="offset_2">120dp</dimen>
+    <dimen name="offset_3">180dp</dimen>
+    <dimen name="offset_4">240dp</dimen>
+
+    <dimen name="padding_list_item">2dp</dimen>
+</resources>
