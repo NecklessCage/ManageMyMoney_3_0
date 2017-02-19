@@ -2,10 +2,11 @@ package com.bupi.ha.mmm_3_0;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
+import android.support.annotation.NonNull;
 
 import com.bupi.ha.mmm_3_0.db.Provider;
 import com.bupi.ha.mmm_3_0.helpers.BackStackLevel;
@@ -15,16 +16,11 @@ import java.util.Calendar;
 
 public class ActivityMain extends AppCompatActivity {
 
-    private boolean isFABOpen = false;
-
-    private FloatingActionButton fam;
-    private android.support.design.widget.FloatingActionButton fab1, fab2, fab3, fab4;
-
     final public Calendar calendar = Calendar.getInstance();
     public Cursor
             cursorExpenseDivisions,
             cursorIncomeDivisions;
-    Helpers helper = new Helpers();
+    private Helpers helper = new Helpers();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,103 +47,35 @@ public class ActivityMain extends AppCompatActivity {
         } // End of if.
     } // End of onBackPressed.
 
-    private void showFABMenu() {
-        fam.animate().rotation(-180);
-        //fam.setImageDrawable(ContextCompat.getDrawable(ActivityMain.this, R.drawable.caret_arrow_right));
-        isFABOpen = true;
-        fab1.animate().translationX(-getResources().getDimension(R.dimen.offset_1));
-        fab2.animate().translationX(-getResources().getDimension(R.dimen.offset_2));
-        fab3.animate().translationX(-getResources().getDimension(R.dimen.offset_3));
-        fab4.animate().translationX(-getResources().getDimension(R.dimen.offset_4));
-    }
-
-    private void closeFABMenu() {
-        fam.animate().rotation(0);
-        //fam.setImageDrawable(ContextCompat.getDrawable(ActivityMain.this, R.drawable.caret_arrow_left));
-        isFABOpen = false;
-        fab1.animate().translationX(0);
-        fab2.animate().translationX(0);
-        fab3.animate().translationX(0);
-        fab4.animate().translationX(0);
-    }
-
     private void AddListeners() {
-        // Fab Menu
-        fam = (FloatingActionButton) findViewById(R.id.fam);
-        fab4 = (FloatingActionButton) findViewById(R.id.fab_snapshot);
-        fab3 = (FloatingActionButton) findViewById(R.id.fab_report);
-        fab2 = (FloatingActionButton) findViewById(R.id.fab_income);
-        fab1 = (FloatingActionButton) findViewById(R.id.fab_expense);
-
-        fam.setOnClickListener(new View.OnClickListener() {
+        // Bottom Navigation View
+        BottomNavigationView bottomNavigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                if (isFABOpen) {
-                    closeFABMenu();
-                } else {
-                    showFABMenu();
-                } // if
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                handleBottomNavigationItemSelected(item);
+                return true;
             }
         });
+    }
 
-        fab4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
-                        new FragmentStartPage(), "Snapshot");
-                closeFABMenu();
-            }
-        });
-        fab3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
-                        new Report(), "Report");
-                closeFABMenu();
-            }
-        });
-        fab2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
-                        new IncomeInput(), "IncomeInput");
-                closeFABMenu();
-            }
-        });
-        fab1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+    private void handleBottomNavigationItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_expense:
                 helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
                         new ExpenseInput(), "ExpenseInput");
-                closeFABMenu();
-            }
-        });
-
-//        //****** First argument of replaceFragment is always set as SECOND level back stack.********
-//        ImageView imageViewExpense = (ImageView) findViewById(R.id.image_view_expense);
-//        imageViewExpense.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
-//                        new ExpenseInput(), "ExpenseInput");
-//            } // End of onClick.
-//        }); // End of setOnClickListener.
-//
-//        ImageView imageViewIncome = (ImageView) findViewById(R.id.image_view_income);
-//        imageViewIncome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
-//                        new IncomeInput(), "IncomeInput");
-//            } // End of onClick.
-//        }); // End of setOnClickListener.
-//
-//        ImageView imageViewReport = (ImageView) findViewById(R.id.image_view_report);
-//        imageViewReport.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
-//                        new Report(), "Report");
-//            } // End of onClick.
-//        }); // End of setOnClickListener.
-    } // End of AddListeners.
+                break;
+            case R.id.nav_income:
+                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
+                        new IncomeInput(), "IncomeInput");
+                break;
+            case R.id.nav_report:
+                helper.replaceFragment(BackStackLevel.SECOND, getFragmentManager(),
+                        new Report(), "Report");
+                break;
+            default: break;
+        }
+    }
 
     public void onClickDeleteExpenses(View view) {
         getContentResolver().delete(Provider.ContentUri.EXPENSE, null, null);

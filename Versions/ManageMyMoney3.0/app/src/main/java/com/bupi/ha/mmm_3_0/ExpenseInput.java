@@ -75,6 +75,11 @@ public class ExpenseInput extends BackStackFragment {
                             _activity,
                             divisionSpinner.getSelectedItemId())
             ); // End of setAdapter.
+        } else {
+            Toast.makeText(_activity.getApplicationContext(),
+                    getString(R.string.prompt_no_division),
+                    Toast.LENGTH_SHORT)
+                    .show();
         } // End of if.
     } // End of LoadCategoryOptions.
 

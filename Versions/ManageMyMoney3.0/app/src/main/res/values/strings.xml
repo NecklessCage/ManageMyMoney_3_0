@@ -2,7 +2,7 @@
     <string name="app_name">MMM 3.0</string>
 
     <string name="welcome_msg">Manage My Money 3.0</string>
-    <string name="loading_msg">Loading ...</string>
+    <string name="loading_msg">Loading&#8230;</string>
 
     <!--................................................................................ Strings -->
     <string name="app_title_expense_input">MMM 2.0: Expense Input</string>
@@ -15,13 +15,18 @@
     <string name="app_title_income_category_insert">MMM 2.0: Income Category Insert</string>
     <string name="app_title_income_division_insert">MMM 2.0: Income Division Insert</string>
 
+    <string name="nav_income">Income</string>
+    <string name="nav_expense">Expense</string>
+    <string name="nav_report">Report</string>
+    <string name="nav_snapshot">Snapshot</string>
+
     <string name="start_page_title">Weekly Expense</string>
     <string name="start_page_income">Monthly Income</string>
 
     <string name="dialog_yes">Yes</string>
     <string name="dialog_cancel">Cancel</string>
 
-    <string name="hint_note">Description</string>
+    <string name="hint_note">Description (Optional)</string>
     <string name="hint_amount">$$$</string>
     <string name="text_add_expense">Add Expense</string>
     <string name="text_use_all_filters">Use all filters</string>

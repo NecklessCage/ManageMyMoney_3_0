@@ -185,6 +185,7 @@ public class IncomeInput extends BackStackFragment {
                 // Get user inputs from the views.
                 Spinner incomeDivisionSpinner = (Spinner) rootView.findViewById(R.id.spinner_income_input_income_division);
                 Spinner incomeCategorySpinner = (Spinner) rootView.findViewById(R.id.spinner_income_input_income_category);
+                EditText incomeNoteEditText = (EditText) rootView.findViewById(R.id.edit_text_income_note);
                 EditText editTextIncomeAmount = (EditText) rootView.findViewById(R.id.edit_text_income_amount);
 
                 if (incomeDivisionSpinner.getSelectedItemPosition() > -1 &&
@@ -192,6 +193,7 @@ public class IncomeInput extends BackStackFragment {
                         editTextIncomeAmount.getText().length() > 0) {
                     long incomeDivisionId = incomeDivisionSpinner.getSelectedItemId();
                     long incomeCategoryId = incomeCategorySpinner.getSelectedItemId();
+                    String incomeNote = incomeNoteEditText.getText().toString();
                     int incomeAmount = Integer.parseInt(editTextIncomeAmount.getText().toString());
 
                     // Put values in content values object.
@@ -199,6 +201,7 @@ public class IncomeInput extends BackStackFragment {
                     values.put(Income.Columns.INCOME_DATE, selectedIncomeDate);
                     values.put(Income.Columns.INCOME_DIVISION, incomeDivisionId);
                     values.put(Income.Columns.INCOME_CATEGORY, incomeCategoryId);
+                    values.put(Income.Columns.INCOME_NOTE, incomeNote);
                     values.put(Income.Columns.INCOME_AMOUNT, incomeAmount);
 
                     // Do insertion.

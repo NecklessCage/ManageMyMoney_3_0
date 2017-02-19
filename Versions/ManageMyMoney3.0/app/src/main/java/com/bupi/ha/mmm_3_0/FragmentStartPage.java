@@ -63,7 +63,7 @@ public class FragmentStartPage extends BackStackFragment {
         Calendar aWeekAgoCal = Calendar.getInstance();
         aWeekAgoCal.add(Calendar.DATE, -7);
         long aWeekAgo = Helpers.setMidnight(aWeekAgoCal);
-        String selection = "ExpenseDate>=" + aWeekAgo + " AND ExpenseDate<" + today;
+        String selection = "ExpenseDate>=" + aWeekAgo + " AND ExpenseDate<=" + today;
         String sortOrder = "ExpenseDate";
         _weeklyExpense.setAdapter(Helpers.LoadExpenseReport(_activity, selection, sortOrder));
 
@@ -74,7 +74,7 @@ public class FragmentStartPage extends BackStackFragment {
         thisMonthCal.set(Calendar.DAY_OF_MONTH, Helpers.numberOfDaysInMonth(
                 thisMonthCal.get(Calendar.YEAR),
                 thisMonthCal.get(Calendar.MONTH)));
-        selection = "IncomeDate>=" + Helpers.setMidnight(thisMonthCal) + " AND IncomeDate<" + today;
+        selection = "IncomeDate>=" + Helpers.setMidnight(thisMonthCal) + " AND IncomeDate<=" + today;
         _monthlyIncome.setAdapter(Helpers.LoadIncomeReport(_activity, selection, sortOrder));
     } // populateListView
 

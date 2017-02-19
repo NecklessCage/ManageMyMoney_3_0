@@ -8,10 +8,20 @@
         <item name="android:editTextStyle">@style/AppTheme.EditText</item>
 
         <item name="android:listViewStyle">@style/AppTheme.ListView</item>
+
+        <item name="android:spinnerStyle">@style/AppTheme.Spinner</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
+    <style name="AppTheme.Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:colorBackground">@color/primary</item>
+    </style>
+
+    <style name="AppTheme.SpinnerItem" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:background">@color/primary</item>
     </style>
 
     <style name="AppTheme.TableRow">

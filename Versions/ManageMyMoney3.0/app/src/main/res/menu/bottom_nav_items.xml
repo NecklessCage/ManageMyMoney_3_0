@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/nav_expense"
+        android:enabled="true"
+        android:icon="@drawable/pencil"
+        android:title="@string/nav_expense"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/nav_income"
+        android:enabled="true"
+        android:icon="@drawable/dollar_symbol"
+        android:title="@string/nav_income"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/nav_report"
+        android:enabled="true"
+        android:icon="@drawable/pie_chart"
+        android:title="@string/nav_report"
+        app:showAsAction="ifRoom"/>
+</menu>

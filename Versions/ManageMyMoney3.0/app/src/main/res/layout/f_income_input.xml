@@ -36,6 +36,18 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/edit_text_income_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_note"
+            android:inputType="text" />
     </TableRow>
 
     <TableRow>
